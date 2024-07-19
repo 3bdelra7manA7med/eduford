@@ -1,0 +1,415 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    margin: 30px 20px;
+}
+
+ul,
+li,
+a {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    position: relative;
+}
+
+nav a::before {
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: #f35c51;
+    position: absolute;
+    bottom: -4px;
+    transform: scale(0);
+    transition: ease 0.2s all;
+
+}
+
+nav a:hover::before {
+    background-color: #f44336;
+    transform: scaleX(1);
+}
+
+
+ul {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+
+}
+
+nav>img {
+    margin-right: auto;
+    width: 10vw;
+}
+
+.section1 {
+    height: 100vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(eduford_img/banner.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.S1content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50vh;
+    gap: 30px;
+    text-align: center;
+}
+
+.S1content h1 {
+    font-size: 3.5em;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+.S1content p {
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    width: 40%;
+
+}
+
+.S1content a {
+    padding: 15px 30px;
+    border: 1px solid white;
+}
+
+.S1content a:hover {
+    background-color: #f44336;
+    border: 1px solid #f44336;
+    transition: 1s;
+}
+
+nav svg {
+    cursor: pointer;
+    display: none;
+}
+
+
+@media screen and (max-width:768px) {
+    .S1content h1 {
+        font-size: 2em;
+    }
+
+    p,
+    a {
+        font-size: 12px;
+    }
+
+    nav>img {
+        width: 30vw;
+    }
+
+    .navLinks ul,
+    li,
+    a {
+        display: block;
+    }
+
+    .navLinks a {
+        padding: 10px 15px 10px 20px;
+        font-size: 13px;
+    }
+
+    .navLinks a:hover {
+        background-color: #f35c51;
+        transition: ease 1s all;
+    }
+
+    .navLinks {
+        position: fixed;
+        background-color: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: ease 0.8s all;
+        border-left: 2px solid #f35c51;
+        border-radius: 10px 0px 0px 10px;
+    }
+
+    .navLinks svg {
+        margin: 10px;
+        display: block;
+        cursor: pointer;
+    }
+
+    nav svg {
+        display: flex;
+    }
+
+}
+
+.section2 {
+    background-color: white;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section2 h2 {
+    font-size: 1.2em;
+}
+
+.section2 p {
+    color: gray;
+}
+
+.Section2Headers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 30px 60px 30px;
+    gap: 10px;
+}
+
+.coursesContainer {
+    margin: 5vh 2vw;
+    max-width: 1280px;
+
+}
+
+.CContent {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.course {
+    padding: 30px;
+    width: 30%;
+    text-align: center;
+    background-color: #f8f1e8;
+    border-radius: 12px;
+    transition: ease 0.5s all;
+    min-width: 300px;
+}
+
+.course:hover {
+    box-shadow: 1px 1px 10px 5px rgb(219, 218, 218);
+}
+
+.course h2 {
+    line-height: 2.5;
+
+}
+
+.globalCampusContainer {
+    margin: 5vh 2vw;
+    max-width: 1280px;
+    width: 100%;
+
+}
+
+.GContent {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 26px;
+}
+
+.campus {
+    width: 30%;
+    height: 544px;
+    text-align: center;
+    border-radius: 10px;
+    background-size: cover;
+    min-width: 300px;
+
+}
+
+.london {
+    background-image: url(./eduford_img/london.png);
+
+}
+
+.newyork {
+    background-image: url(./eduford_img/newyork.png);
+}
+
+.washington {
+    background-image: url(./eduford_img/washington.png);
+
+}
+
+
+.campus h2 {
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    color: white;
+    border-radius: inherit;
+    transition: ease 0.5s all;
+    align-content: center;
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+.campus:hover h2 {
+    visibility: visible;
+    background-color: #fc4436d2;
+    transform: scaleY(100%);
+}
+
+.facilitiesContainer {
+    margin: 5vh 2vw;
+    max-width: 1280px;
+}
+
+.FContent {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 35px;
+
+}
+
+.fac {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30%;
+    min-width: 300px;
+}
+
+.fac img {
+    height: 300px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.opinionsContainer {
+    margin: 5vh 2vw;
+    max-width: 1280px;
+}
+
+.OContent {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+
+}
+
+.opinion {
+    display: flex;
+    background-color: #f8f1e8;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+
+
+}
+
+.opinion img {
+    width: 50px;
+    border-radius: 50%;
+}
+
+.OText {
+    line-height: 2;
+}
+
+.OText :not(span) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+
+}
+
+.checked {
+    color: orange;
+}
+
+.ContactusContainer {
+    margin: 5vh 2vw;
+    max-width: 1280px;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(eduford_img/banner2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.ContactusContainer .Section2Headers {
+    height: 50vh;
+    text-align: center;
+    gap: 30px;
+}
+
+.ContactusContainer h1 {
+    color: white;
+}
+
+.Section2Headers a {
+    padding: 15px 30px;
+    border: 1px solid white;
+}
+
+.Section2Headers a:hover {
+    background-color: #f44336;
+    border: 1px solid #f44336;
+    transition: 1s;
+}
+
+.aboutusContainer {
+    margin: 5vh 2vw;
+    max-width: 1280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+.aboutusContainer span {
+    display: flex;
+    gap: 10px;
+
+}
+
+.aboutusContainer a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+
+}
+
+@media screen and (max-width:700px) {
+    .OContent {
+        flex-wrap: wrap;
+    }
+}
